@@ -31,10 +31,12 @@ class TransaksiObat extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+             ['jumlah', 'default', 'value' => 1],
             [['transaksi_id', 'obat_id'], 'required'],
             [['transaksi_id', 'obat_id', 'jumlah'], 'integer'],
             [['obat_id'], 'exist', 'skipOnError' => true, 'targetClass' => Obat::class, 'targetAttribute' => ['obat_id' => 'id']],
             [['transaksi_id'], 'exist', 'skipOnError' => true, 'targetClass' => Transaksi::class, 'targetAttribute' => ['transaksi_id' => 'id']],
+             ['jumlah', 'default', 'value' => 1],
         ];
     }
 
