@@ -16,6 +16,7 @@ class m230509_222726_create_transaksi_tindakan_table extends Migration
             'id' => $this->primaryKey(),
             'transaksi_id' => $this->integer()->notNull(),
             'tindakan_id' => $this->integer()->notNull(),
+            'jumlah' => $this->integer()->notNull(),
         ]);
 
         $this->addForeignKey(
